@@ -2,6 +2,19 @@
 
 ## CycleGAN
 
+### Samples
+
+#### Orange to Apple and vice versa
+
+The left column is original photos, the middle column is generated ones, while the right one is reconstruted ones.
+
+![Orange Apple transformation.](doc/images/apple-orange_good.jpg)
+
+You can also see the algorithm works like a style transfer. It won't change the shapes of objects.
+
+![Colorization](doc/images/colorization.jpg)
+
+
 ### Dependencies
 
 1. Pytorch 1.0+
