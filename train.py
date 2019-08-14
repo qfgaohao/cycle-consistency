@@ -1,6 +1,6 @@
 from vision.nets import (
     unet128_cycle_gan, unet256_cycle_gan, simple_adam_optimizer, 
-    residual_unet128_cycle_gan, residual_unet256_cycle_gan
+    resnet_cycle_gan
 )
 from vision.datasets import SimpleImageFolder
 from vision.utils import Accumulator
@@ -29,7 +29,7 @@ def parse_args():
                         help='number of data loading workers (default: 8)')
     parser.add_argument("-s", "--sample-path", default="./samples")
 
-    parser.add_argument("-g", "--generator", default="residual_unet256", 
+    parser.add_argument("-g", "--generator", default="unet256", 
         help="choose from unet128, unet256, residual_unet128 and residual_unet256.")
 
     parser.add_argument('-i', '--input-size', default=256, type=int, metavar='N')
@@ -47,11 +47,8 @@ def make_gan(name):
         return unet128_cycle_gan()
     elif name == 'unet256':
         return unet256_cycle_gan()
-    
-    elif name == 'residual_unet128':
-        return residual_unet128_cycle_gan()
-    elif name == 'residual_unet256':
-        return residual_unet256_cycle_gan()
+    elif name == 'resnet':
+        return resnet_cycle_gan()
     else:
         raise NameError(f"{name} is supported.")
 

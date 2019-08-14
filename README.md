@@ -10,8 +10,12 @@
 
 ### Download data
 
+```
 ./download_cyclegan_dataset.sh  monet2photo
+```
 
 ### Train
 
-python train.py -d datasets/monet2photo -b 2 -j 4 -lr 0.0002
+```
+python train.py -d datasets/monet2photo/ -b 4 -j 4 -lr 0.0002 -li 1 -g resnet -i 128
+```

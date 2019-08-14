@@ -1,4 +1,5 @@
 from .unet import unet128, unet256, residual_unet128, residual_unet256
+from .resnet import resnet
 from .discriminator import patch_discriminator8
 from ..utils import ImagePool 
 
@@ -168,3 +169,7 @@ def residual_unet128_cycle_gan(training=True):
 
 def residual_unet256_cycle_gan(training=True):
     return CycleGan(residual_unet256, patch_discriminator8, training=training)
+
+
+def resnet_cycle_gan(training=True):
+    return CycleGan(resnet, patch_discriminator8, training=training)
